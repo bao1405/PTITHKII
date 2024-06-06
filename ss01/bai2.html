@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [
+                {id:1, number: 25},
+                {id:1, number: 30},
+                {id:1, number: 50}
+            ]
+        array.findIndex((item,index,array)=>{
+            if(item.number < 30){
+                item.number = item.number + 10;
+            }else if(item.number > 40){
+                item.number = item.number - 10;
+            }else{
+                item.number = item.number;
+            }
+        });
+        console.log(array); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+
+nav button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+nav button.active {
+  background-color: #272222; /* Màu khi tab được chọn */
+  color: white;
+}
+
+nav button.default {
+  background-color: darkgray; /* Màu mặc định cho tab "Trang chủ" */
+  color: white;
+}

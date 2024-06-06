@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            reduce: thường dùng trong việc tính toán
+            accumlator : biến tích luỹ
+        */
+        let carts = [
+            {
+                product:"iphone",
+                price:5000,
+                quantity:20,
+            },
+            {
+                product:"iphone",
+                price:5000,
+                quantity:20,
+            },
+            {
+                product:"iphone",
+                price:5000,
+                quantity:20,
+            },
+            {
+                product:"iphone",
+                price:5000,
+                quantity:20,
+            }
+        ]
+
+        let number = [5,9,6,7]
+        let reduce = number.reduce((accumlator,currentValue,number)=>{
+            console.log(accumlator);
+            return accumlator + currentValue;
+        },0);
+
+        console.log(reduce);
+
+
+        let reduce1 = carts.reduce((accumlator,currentValue,carts)=>{
+            return accumlator + currentValue.price*currentValue.quantity;
+        },0);
+        console.log(reduce1);
+    </script>
+</body>
+</html>

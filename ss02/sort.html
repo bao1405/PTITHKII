@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            sort(): sắp xếp
+            dùng để duyệt các phần tử trong mảng
+            tham số item, inden, array
+            nếu tất cả phần tử thoả mãn điều kiện kết quả trả về là true
+            nếu ít nhất có 1 phần tử không thoả mãn điều kiện kết quả trả về là flase
+        */
+
+        let number = [1,5,7,11,15];
+        let result = number.sort((a,b)=>{
+            return b - a;
+            // a - b sắp xếp tăng dần
+            // b - a sắp xếp giảm dần
+        });
+
+        let films = [
+            {
+                name:"phim ma",
+                date:"12/1/2024"
+            },
+            {
+                name:"phim tinh cam",
+                date:"10/2/2023"
+            },
+            {
+                name:"phim hai",
+                date:"11/3/2023"
+            }
+        ]
+
+        let result1 = films.sort((c, d) => {
+            return new Date(c.date) - new Date(d.date);
+        });
+
+        console.log(result1);
+        console.log(result);
+    </script>
+</body>
+</html>

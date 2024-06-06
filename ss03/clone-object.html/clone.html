@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            JS chia thaành 2 loại clone
+            1.shalow clone : clone nông
+            - sử dụng Spread
+            - object.asign
+            2.deep clone : clone sâu
+            - chuyển sang định dạng JSON
+        */ 
+
+        let obj = {
+            name : "name",
+            id:1,
+            address : {
+                city:"hà nội"
+            }
+        }
+
+        let newObj = {...obj};
+        obj.name = "hong";
+        console.log(newObj);
+        obj.address.city = "Hà Tĩnh";
+        console.log(obj.address.city);
+        let newObj1 = Object.assign({},obj);
+        obj.name = "hong";
+        obj.address.city = "Hà tĩnh";
+        console.log(newObj1);
+        //  chuyển sang định dang JSON
+
+        let Obj = JSON.parse(JSON.stringify(obj));
+        console.log(Obj);
+    </script>
+</body>
+</html>

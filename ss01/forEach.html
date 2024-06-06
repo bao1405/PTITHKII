@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // chức năng dùng duyệt các phần tử trong mảng
+        // tương tác trực tiếp với các phần tử trong mảng ban đầu
+        // không tạo ra mảng mới
+        // đối với forEach không nhận return
+        let array = [4,5,6]
+        array.forEach((item,index,array) =>{
+            console.log("Item",item);
+            console.log("index",index);
+            console.log("array",array);
+            console.log("***********");
+            //thay đổi giá trị trong mảng array
+            array[item] = item*2;
+            console.log(array);
+        });
+    </script>
+</body>
+</html>

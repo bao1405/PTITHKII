@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array1 = [1, 2, '1', 3, 'a'];
+        let array2 = [1, 2, 3, 4];
+
+        function filterValuesFromArr1(arr1, arr2) {
+            let filteredValues = arr1.filter(item => !arr2.includes(item));
+            arr1.splice(0, arr1.length, ...arr2.filter(item => arr1.includes(item))); 
+            return filteredValues;
+        }
+
+        console.log(filterValuesFromArr1(array1, array2));
+        console.log(array1);
+    </script>
+</body>
+</html>

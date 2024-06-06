@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const greetingWithWeather = (name, weather) => {
+        let greeting = `Chào ${name}! `;
+        
+        switch (weather) {
+            case 'sunny':
+                greeting += "Hôm nay trời nắng tuyệt vời!";
+                break;
+            case 'rainy':
+                greeting += "Hôm nay trời mưa, hãy mang theo ô!";
+                break;
+            default:
+                greeting += "Hôm nay thời tiết không xác định.";
+                break;
+        }
+        
+        return greeting;
+    };
+
+    console.log(greetingWithWeather("Nguyễn", "sunny"));
+    console.log(greetingWithWeather("An", "rainy"));
+    console.log(greetingWithWeather("Huy", "cloudy"));
+
+    </script>
+</body>
+</html>

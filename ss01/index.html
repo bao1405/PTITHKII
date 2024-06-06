@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        các hàm nâng cao trong JS
+        1.forEach()
+        2.map()
+        3.filter()
+        4.find()
+        5.findIndex()
+        // sự khác nhau giữa arraw function và function bình thường là như thế nào?
+        1.cú pháp ngắn hơn 
+        2.không thể dùng hàm costruction
+        3.không thể dùng this
+        {
+            1.đối với arraw function thì phải gọi sau khi khai báo 
+            2.cú pháp ngắn gọn hơn function bình thường
+            3.đối với arraw function không dùng được arguments(sẽ lấy hết các đối số chuyền vào)
+            4.arraw function không thể dùng làm hàm tạo constructor
+            5.binding (ràng buộc) this
+            "đối với function bình thương khi đối tượng gọi phương thức thì this đại diện cho đối tượng đấy"
+            => đối với arraw function thì this đại diện cho đối tượng windown
+        }
+    -->
+    <script>
+        // hàm function bình thương (declaration function)
+        function sum(a,b){
+            return a + b;
+        }
+        console.log(sum(1,5));
+        //hàm arraw function
+        const sum1 = (c,d) =>{
+            return c + d;
+        }
+        console.log(sum1(5,6));
+
+        function sum2(){
+            console.log('arguments',arguments);
+        }
+        console.log(sum2(1,5,6,8,9));
+
+        function Student(name,age){
+            this.name1 = name;
+            this.age1 = age;
+        }
+
+        let student1 = new Student('hoa',"19");
+        let student2 = new Student('hồng','20');
+        console.log(student1);
+        console.log(student2);
+        //function bình thường
+        let obj = {
+            name :"hồng",
+            address:"Hà Nội",
+            gerAddress: function(){
+                console.log("tên obj",this.name);
+            }
+        }
+        console.log(obj.gerAddress());
+        // arraw function
+        let obj1 = {
+            name1 :"hồng",
+            address1:"Hà Nội",
+            gerAddress1:() => {
+                console.log("tên obj",this.name1);
+            }
+        }
+        console.log(obj.gerAddress1());
+    </script>
+</body>
+</html>

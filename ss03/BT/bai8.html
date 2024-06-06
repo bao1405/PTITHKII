@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const insertArray = (arr1, arr2, index) => {
+            if (index < 0 || index > arr1.length) {
+                console.log("Vị trí chèn không hợp lệ.");
+                return;
+            }
+
+            const result = [...arr1.slice(0, index), ...arr2, ...arr1.slice(index)];
+
+            return result;
+        };
+        console.log(insertArray([1, 2, 3, 7, 8], [4, 5, 6], 3));
+        console.log(insertArray(['a', 'b', 'e', 'f'], ['c', 'd'], 2));
+    </script>
+</body>
+</html>

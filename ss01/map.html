@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            chức năng duyệt các phần tử trong mảng
+            tạo ra mảng mới với số phần tử bằng số phần tử mảng ban đầu
+
+        */
+        let array = [4,5,6]
+        let resual = array.map((item,index,array) =>{
+            console.log("Item",item);
+            console.log("index",index);
+            console.log("array",array);
+            console.log("***********");
+            return item > 5;
+            //thay đổi giá trị trong mảng array
+            array[index] = item*2;
+        });
+        console.log(array);
+        console.log(resual);
+    </script>
+</body>
+</html>

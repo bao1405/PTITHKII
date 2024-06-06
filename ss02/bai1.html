@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = [1, 2, 3, 4, -5];
+        const arr2 = [1,2, 3, 4, 5];
+        //some
+        function hasNegativeNumber(arr) {
+            return arr.some(num => num < 0);
+        }
+        console.log(hasNegativeNumber(arr1)); 
+        console.log(hasNegativeNumber(arr2));
+        //every
+        function hasNegativeNumber1(arr) {
+            return !arr.every(num => num >= 0);
+        }
+        console.log(hasNegativeNumber1(arr1)); 
+        console.log(hasNegativeNumber1(arr2));
+        //sort
+        function hasNegativeNumber2(arr) {
+            arr.sort((a, b) => a - b);
+            return arr[0] < 0;
+        }
+        console.log(hasNegativeNumber2(arr1)); 
+        console.log(hasNegativeNumber2(arr2));
+        //reduce
+        function hasNegativeNumber3(arr) {
+            return arr.reduce((acc, num) => acc || num < 0, false);
+        }
+        console.log(hasNegativeNumber3(arr1)); 
+        console.log(hasNegativeNumber3(arr2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array1 = [1,2,'a',6,7];
+        let array2 = ['b','hai'];
+        let index = 2;
+
+        function insertArrayAt(arr1, arr2, index) {
+            let result = [];
+            arr1.map((item, idx) => {
+                if (idx === index) {
+                    result = result.concat(arr2);
+                }
+                result.push(item);
+            });
+            return result;
+        }
+        console.log(insertArrayAt(array1, array2, index));
+    </script>
+</body>
+</html>

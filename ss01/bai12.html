@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .horizontal-table-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .horizontal-table {
+            flex: 1;
+            display: table;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        .horizontal-table-header {
+            display: table-header-group;
+        }
+
+        .horizontal-table-row {
+            display: table-row;
+        }
+
+        .horizontal-table-cell {
+            display: table-cell;
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <select id="group-by">
+        <option value="">lựa chọn</option>
+        <option value="age">Tuổi</option>
+        <option value="department">Phòng ban</option>
+    </select>
+    <div class="horizontal-table-container" id="result"></div>
+    <script>
+        let employees = [
+            { 
+                id: 1, 
+                name: 'Alice', 
+                age: 25, 
+                department: 'HR' 
+            },
+            { 
+                id: 2, 
+                name: 'Bob', 
+                age: 30, 
+                department: 'IT' 
+            },
+            { 
+                id: 3, 
+                name: 'Charlie', 
+                age: 25, 
+                department: 'Marketing' 
+            },
+            { 
+                id: 4, 
+                name: 'David', 
+                age: 35, 
+                department: 'IT' 
+            },
+            { 
+                id: 5, 
+                name: 'Eve', 
+                age: 30, 
+                department: 'HR' 
+            }
+        ];
+
+        function groupEmployeesBy(property) {
+            return employees.reduce((acc, employee) => {
+                const key = employee[property];
+                if (!acc[key]) {
+                    acc[key] = [];
+                }
+                acc[key].push(employee);
+                return acc;
+            }, {});
+        }
+
+            function renderGroupedData(groupedData) {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+
+                for (const key in groupedData) {
+                    const groupTable = document.createElement('div');
+                    groupTable.classList.add('horizontal-table');
+
+                    const groupHeader = document.createElement('div');
+                    groupHeader.classList.add('horizontal-table-header');
+                    groupHeader.textContent = `${key}:`;
+                    groupTable.appendChild(groupHeader);
+
+                    const nameCell = document.createElement('div');
+                    nameCell.classList.add('horizontal-table-cell');
+                    const names = groupedData[key].map(employee => `${employee.name}`).join(', ');
+                    nameCell.textContent = names;
+                    groupTable.appendChild(nameCell);
+
+                    resultDiv.appendChild(groupTable);
+                }
+            }
+        const groupBySelect = document.getElementById('group-by');
+        groupBySelect.addEventListener('change', function() {
+            const selectedOption = this.value;
+            const groupedData = groupEmployeesBy(selectedOption);
+            renderGroupedData(groupedData);
+        });
+
+        renderGroupedData(groupEmployeesBy('age'));
+    </script>
+</body>
+</html>

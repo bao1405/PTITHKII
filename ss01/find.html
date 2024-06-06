@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            find : tìm kiếm phần tử thảo mãn điều kiện
+            nếu thoả mãn điều kiện trả về phần tử 
+            nếu không thoả mãn trả về undifind
+
+        */
+        let arr = [
+            {
+                id: 5,
+                name: "dũng",
+                add:"HN",
+            },
+            {
+                id: 6,
+                name: "dũng1",
+                add:"HN",
+            }
+        ]
+        // có phần tử
+        let result = arr.find((item,index,arr)=>{
+            return item.id == 5;
+        })
+
+        console.log(result);
+        // không có phần tử
+        let result1 = arr.find((item,index,arr)=>{
+            return item.id == 1;
+        })
+
+        console.log(result1);
+    </script>
+</body>
+</html>

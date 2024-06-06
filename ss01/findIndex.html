@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            findindex: tìm kiếm vị trí phần tử thảo mãn điều kiện
+            nếu thoả mãn điều kiện trả về vị trí phần tử 
+            nếu không thoả mãn trả về -1
+
+        */
+        let arr = [
+            {
+                id: 5,
+                name: "dũng",
+                add:"HN",
+            },
+            {
+                id: 6,
+                name: "dũng1",
+                add:"HN",
+            },
+            {
+                id: 7,
+                name: "dũng1",
+                add:"HN",
+            }
+        ]
+        // có phần tử
+        let result = arr.findIndex((item,index,arr)=>{
+            return item.id == 5;
+        })
+
+        console.log(result);
+        // không có phần tử
+        let result1 = arr.findIndex((item,index,arr)=>{
+            return item.id == 1;
+        })
+
+        console.log(result1);
+    </script>
+</body>
+</html>

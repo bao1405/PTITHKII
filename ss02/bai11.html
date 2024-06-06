@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLargestNumberAndIndex(arr) {
+            if (arr.some(item => typeof item !== 'number' || !Number.isInteger(item))) {
+                return "Sai kiểu dữ liệu";
+            }
+
+            const largestIndex = arr.reduce((maxIndex, currentValue, currentIndex, array) => {
+                return currentValue > array[maxIndex] ? currentIndex : maxIndex;
+            }, 0);
+
+            return { element: arr[largestIndex], index: largestIndex };
+        }
+
+        console.log(findLargestNumberAndIndex([1, 2, 3, "a"]));
+        console.log(findLargestNumberAndIndex([1, 2, 3, 4]));
+    </script>
+</body>
+</html>

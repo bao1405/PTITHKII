@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let accounts = [
+            { userName: "nhat", password: "nhat123" },
+            { userName: "nhat1", password: "nhat12" },
+            { userName: "nhat23", password: "nhat1" },
+            { userName: "unhat4", password: "nhat4" }
+        ];
+
+        function hasSpace(account) {
+            return account.password.includes(' ');
+        }
+        let invalidAccountIndex = accounts.findIndex(hasSpace);
+        if (invalidAccountIndex !== -1) {
+            console.log("Vị trí của tài khoản có password chứa dấu cách:", invalidAccountIndex,);
+        } else {
+            console.log("Tất cả các tài khoản hợp lệ:");
+            accounts.forEach((account, index) => {
+                console.log("Tài khoản", index + 1, ":", account.userName,", Mật khẩu",":",account.password);
+            });
+        }
+    </script>
+</body>
+</html>

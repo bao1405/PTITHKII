@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //every
+        function hasUppercase(str) {
+            return !Array.from(str).every(char => char < 'A' || char > 'Z');
+        }
+
+        console.log(hasUppercase("hello")); 
+        console.log(hasUppercase("Hello")); 
+        //sort
+        function hasUppercase1(str) {
+            const sortedChars = Array.from(str).sort();
+            return sortedChars[0] >= 'A' && sortedChars[0] <= 'Z';
+        }
+        console.log(hasUppercase1("hello")); 
+        console.log(hasUppercase1("Hello"));
+        //some
+        function hasUppercase2(str) {
+            return Array.from(str).some(char => char >= 'A' && char <= 'Z');
+        }
+        console.log(hasUppercase2("hello"));
+        console.log(hasUppercase2("Hello"));
+        //reduce
+        function hasUppercase(str) {
+            return Array.from(str).reduce((acc, char) => acc || (char >= 'A' && char <= 'Z'), false);
+        }
+        console.log(hasUppercase("hello"));
+        console.log(hasUppercase("Hello"));
+    </script>
+</body>
+</html>

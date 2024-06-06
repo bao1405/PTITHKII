@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            filter: lọc
+            tạo ra mảng mới chứa các phần tử thảo mãn điều kiện lọc còn nếu không có phần từ nào trả về 1 mảng rỗng
+
+        */
+        let array = [4,5,6]
+        let number = array.filter((item,index,array) =>{
+            return item > 5;
+        });
+        console.log(number);
+    </script>
+</body>
+</html>

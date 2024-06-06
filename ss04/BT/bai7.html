@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let phoneBooks = [];
+
+        const addContact = (name, phoneNumber, email) => {
+            let contact = {
+                name,
+                phoneNumber,
+                email
+            };
+            phoneBooks.push(contact);
+        }
+
+        const displayContacts = () => {
+            phoneBooks.forEach((contact, index) => {
+                console.log(`Contact ${index + 1}:`);
+                console.log(`Name: ${contact.name}`);
+                console.log(`Phone Number: ${contact.phoneNumber}`);
+                console.log(`Email: ${contact.email}`);
+                console.log("-------------------------------------");
+            });
+        }
+
+        addContact("John Doe", "123456789", "john@example.com");
+        addContact("Jane Smith", "987654321", "jane@example.com");
+        addContact("Alice Johnson", "456789123", "alice@example.com");
+        displayContacts();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        đặc biệt quan trọng trong react sử dụng nhiều
+        1.dùng với array
+        2.dùng với object
+     -->
+    <script>
+        // dùng với array
+        let student = ["bảo","bảo1","bảo2"];
+        let [std1,std2,std3] = student;
+        console.log("std",std1); 
+        console.log("std",std2); 
+        console.log("std",std3);
+        // dùng với obj
+        let obj = {
+            name : "hoa",
+            id:111,
+            add: "HN",
+            age:23
+        }
+        let {name} = obj;
+        console.log("name",name);
+    </script>
+</body>
+</html>

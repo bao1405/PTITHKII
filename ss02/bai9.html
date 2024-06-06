@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       const carts = [
+            {
+                product_name: "Cam",
+                price: 20000,
+                quantity: 5,
+            },
+            {
+                product_name: "Táo",
+                price: 30000,
+                quantity: 3,
+            },
+            {
+                product_name: "Xoài",
+                price: 40000,
+                quantity: 2,
+            },
+            ];
+
+            function totalPrice(carts) {
+                return carts.reduce((acc, item) => acc + item.price * item.quantity, 0);
+            }
+
+            console.log(totalPrice(carts));
+    </script>
+</body>
+</html>

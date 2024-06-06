@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [
+            {
+                id:1,
+                name:"nhat"
+            },
+            {
+                id:2,
+                name:"dung"
+            }
+        ]
+        let result = array.forEach((item,index,array) =>{
+            console.log(item);
+        });
+        console.log("***********");
+        let result1 = array.find((item,index,arr)=>{
+            return item.id == 1;
+        })
+        let result2 = array.find((item,index,arr)=>{
+            return item.id == 2;
+        })
+        console.log(result1);
+        console.log("***********");
+        console.log(result2);
+    </script>
+</body>
+</html>
