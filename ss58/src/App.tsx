@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Bai2 from "./components/bai2";
+import Bai3 from "./components/bai3";
+import Bai4 from "./components/bai4";
+import Bai5 from "./components/bai5";
+import Bai6 from "./components/bai6";
+import StudentList from "./components/bt78910/StudentList";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>bt1 là file db.json</h1>
+      <Bai2></Bai2>
+      <Bai3></Bai3>
+      <Bai4></Bai4>
+      <Bai5></Bai5>
+      <Bai6></Bai6>
+      <StudentList></StudentList>
+    </div>
+  );
 }
 
-export default App
+export default App;
