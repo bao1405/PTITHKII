@@ -1,0 +1,65 @@
+{   
+    "posts": [
+      {
+        "id": 1,
+        "title": "First Post",
+        "thumbnail": "https://example.com/thumbnail1.jpg",
+        "created_at": "2024-06-08T08:30:00Z",
+        "created_by": "User1",
+        "comments": [
+          {
+            "id": 1,
+            "text": "Great post!",
+            "created_at": "2024-06-08T09:00:00Z",
+            "created_by": "Commenter1"
+          },
+          {
+            "id": 2,
+            "text": "Thanks for sharing!",
+            "created_at": "2024-06-08T10:00:00Z",
+            "created_by": "Commenter2"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Second Post",
+        "thumbnail": "https://example.com/thumbnail2.jpg",
+        "created_at": "2024-06-08T11:00:00Z",
+        "created_by": "User2",
+        "comments": [
+          {
+            "id": 3,
+            "text": "Very informative.",
+            "created_at": "2024-06-08T12:00:00Z",
+            "created_by": "Commenter3"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Third Post",
+        "thumbnail": "https://example.com/thumbnail3.jpg",
+        "created_at": "2024-06-08T13:00:00Z",
+        "created_by": "User3",
+        "comments": []
+      },
+      {
+        "id": 4,
+        "title": "Fourth Post",
+        "thumbnail": "https://example.com/thumbnail4.jpg",
+        "created_at": "2024-06-08T14:00:00Z",
+        "created_by": "User4",
+        "comments": []
+      },
+      {
+        "id": 5,
+        "title": "Fifth Post",
+        "thumbnail": "https://example.com/thumbnail5.jpg",
+        "created_at": "2024-06-08T15:00:00Z",
+        "created_by": "User5",
+        "comments": []
+      }
+    ]
+  }
+  
