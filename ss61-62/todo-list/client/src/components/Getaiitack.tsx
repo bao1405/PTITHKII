@@ -20,7 +20,7 @@ export default function GetAllTask() {
     const [filter,setFilter]=useState<string>('all')
     //load Data from API
     const loadData=()=>{
-        axios.get('http://localhost:1301/tasks')
+        axios.get('http://localhost:3001/tasks')
         .then(res=>setTasks(res.data))
         .catch(err=>console.log(err)
         )
@@ -46,12 +46,12 @@ export default function GetAllTask() {
     const createTask=()=>{
         //case type Submit is 'add'
         if(typeSubmit==='add'){
-            axios.post('http://localhost:1301/tasks',task)
+            axios.post('http://localhost:3001/tasks',task)
             .then(res=>loadData())
             .catch(err=>console.log(err))
             
         }else{
-            axios.put(`http://localhost:1301/tasks/${task.id}`,task)
+            axios.put(`http://localhost:3001/tasks/${task.id}`,task)
             .then(res=>loadData())
             .catch(err=>console.log(err))
             setTypeSubmit('add');
@@ -60,21 +60,21 @@ export default function GetAllTask() {
     }
     // edit Task
     const updateTaskById=(idTask:number)=>{
-        axios.get(`http://localhost:1301/tasks/${idTask}`)
+        axios.get(`http://localhost:3001/tasks/${idTask}`)
         .then(res=>setTask(res.data))
         .catch(err=>console.log(err))
         setTypeSubmit('update')
     }
     //delete Task
         const deleteTaskById=(idTask:number)=>{
-            axios.delete(`http://localhost:1301/tasks/${idTask}`)
+            axios.delete(`http://localhost:3001/tasks/${idTask}`)
             .then(res=>loadData())
             .catch(err=>console.log(err))
         }
     //change status Task
     const changeStatus=(idTask:number)=>{
         const taskFind:Task|undefined=tasks.find(item=>item.id===idTask);
-        axios.patch(`http://localhost:1301/tasks/${idTask}`,{"status":!taskFind?.status})
+        axios.patch(`http://localhost:3001/tasks/${idTask}`,{"status":!taskFind?.status})
         .then(res=>loadData())
         .catch(err=>console.log(err))
     }
@@ -85,7 +85,7 @@ export default function GetAllTask() {
     }
     //render Task Complete
     const loadTaskComplete=()=>{
-        axios.get(`http://localhost:1301/tasks?status=false`)
+        axios.get(`http://localhost:3001/tasks?status=false`)
         .then(res=>{
             setTasks(res.data);
             setFilter('complete')
@@ -94,7 +94,7 @@ export default function GetAllTask() {
     }
      //render Task Not Complete
      const loadTaskUnComplete=()=>{
-axios.get(`http://localhost:1301/tasks?status=true`)
+    axios.get(`http://localhost:3001/tasks?status=true`)
         .then(res=>{
             setTasks(res.data)
             
@@ -104,7 +104,7 @@ axios.get(`http://localhost:1301/tasks?status=true`)
     }
     //delete All Task
     const deleteTasks=()=>{
-        axios.get('http://localhost:1301/tasks')
+        axios.get('http://localhost:3001/tasks')
         .then(res => {
             const deletePromises = res.data.map((item:Task) => axios.delete(`http://localhost:1301/tasks/${item.id}`));
             return Promise.all(deletePromises);
@@ -115,7 +115,7 @@ axios.get(`http://localhost:1301/tasks?status=true`)
     }
     //delete Task Complete
     const deleteTaskComplete=()=>{
-        axios.get('http://localhost:1301/tasks?status=false')
+        axios.get('http://localhost:3001/tasks?status=false')
         .then(res => {
             const deletePromises = res.data.map((item:Task) => axios.delete(`http://localhost:1301/tasks/${item.id}`));
             return Promise.all(deletePromises);
